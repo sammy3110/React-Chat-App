@@ -117,7 +117,7 @@ export async function addUser(name, email, password, confirm_password) {
 
   if (user) return `User with email ${email} already present.`;
   try {
-    const docRef = await setDoc(doc(database, "users", email), {
+    await setDoc(doc(database, "users", email), {
       unique: (Math.random() + 1).toString(36).substring(7),
       name: name,
       email: email,

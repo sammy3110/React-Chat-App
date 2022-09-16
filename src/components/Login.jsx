@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
@@ -27,9 +27,9 @@ const Login = ({ app_user, getUser, setApp_user }) => {
   function validateLogin() {
     setLoginErrorMessage("");
     if (!email)
-      setLoginErrorMessage((pre) => pre + " " + "Email cannot be empty.");
+      setLoginErrorMessage((pre) => `${pre} Email cannot be empty.`);
     if (!password)
-      setLoginErrorMessage((pre) => pre + " " + "Password cannot be empty.");
+      setLoginErrorMessage((pre) => `${pre} Password cannot be empty.`);
   }
 
   async function loginUser() {

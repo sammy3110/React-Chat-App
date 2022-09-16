@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import UserChatWindow from "./user_components/UserChatWindow";
 import UsersList from "./user_components/UsersList";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import NotFound from "./NotFound";
+// import NotFound from "./NotFound";
 
-const ChatWindow = ({ app_user, getAllUsers, startChat, sendMessage, all_messages }) => {
+const ChatWindow = ({ app_user, getAllUsers, startChat, sendMessage }) => {
   const [chat_with_user, setChat_with_user] = useState();
 
   return (
@@ -24,7 +23,6 @@ const ChatWindow = ({ app_user, getAllUsers, startChat, sendMessage, all_message
           app_user={app_user}
           chat_with_user={chat_with_user}
           setChat_with_user={setChat_with_user}
-          all_messages={all_messages}
         />
       ) : (
         <UsersList

@@ -13,9 +13,7 @@ const UserChatWindow = ({
   app_user,
   chat_with_user,
   setChat_with_user,
-  startChat,
   sendMessage,
-  // all_messages
 }) => {
   const [message, setMessage] = useState("");
   const [all_messages, setAll_messages] = useState([]);
@@ -33,6 +31,7 @@ const UserChatWindow = ({
     document.querySelector(".user_chat_window_main").lastChild?.scrollIntoView(true);
   });
 
+  const unique_id = createUniqueId(app_user, chat_with_user);
   useEffect(() => {
     // async function startGettingMessage() {
     //   const data = await startChat(app_user, chat_with_user);
@@ -46,7 +45,6 @@ const UserChatWindow = ({
     // }
     // startGettingMessage();
     // console.log("In state");
-    const unique_id = createUniqueId(app_user, chat_with_user);
 
     try {
       onSnapshot(

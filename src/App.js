@@ -20,13 +20,13 @@ import {
 //   doc,
 //   onSnapshot,
 // } from "firebase/firestore";
-import { addUser, getUser, getAllUsers, startChat, sendMessage, database } from "./firestore";
+import { addUser, getUser, getAllUsers, startChat, sendMessage } from "./firestore";
 
 
 function App() {
   // const [app_user, setApp_user] = useState({name: "Shyam", email: "abc@gmail.com", password: "123"});
   const [app_user, setApp_user] = useState();
-  const [all_messages, setAll_messages] = useState([]);
+  // const [all_messages, setAll_messages] = useState([]);
 
   function logoutUser() {
     setApp_user(undefined);
@@ -101,7 +101,7 @@ function App() {
       <NavbarComponent app_user={app_user} logoutUser={logoutUser} />
       <div className="flex_center body_container">
         {/* {console.log(app_user)} */}
-        {app_user ? <ChatWindow startChat={startChat} sendMessage={sendMessage} getAllUsers={getAllUsers} app_user={app_user} all_messages={all_messages}/> : login_register}
+        {app_user ? <ChatWindow startChat={startChat} sendMessage={sendMessage} getAllUsers={getAllUsers} app_user={app_user}/> : login_register}
         {/* <ChatWindow /> */}
         {/* {login_register} */}
       </div>

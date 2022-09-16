@@ -21,13 +21,13 @@ const Register = ({ addUser }) => {
   function validateRegister() {
     setRegisterErrorMessage("");
     if (!name)
-      setRegisterErrorMessage((pre) => pre + " " + "Name cannot be empty.");
+      setRegisterErrorMessage((pre) => `${pre} Name cannot be empty.`);
     if (!email)
-      setRegisterErrorMessage((pre) => pre + " " + "Email cannot be empty.");
+      setRegisterErrorMessage((pre) => `${pre} Email cannot be empty.`);
     if (!password)
-      setRegisterErrorMessage((pre) => pre + " " + "Password cannot be empty.");
+      setRegisterErrorMessage((pre) => `${pre} Password cannot be empty.`);
     if (password !== confirm_password)
-      setRegisterErrorMessage((pre) => pre + " " + "Password mismatch.");
+      setRegisterErrorMessage((pre) => `${pre} Password mismatch.`);
   }
 
   async function updateDatabase() {
