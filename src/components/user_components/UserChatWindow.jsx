@@ -31,21 +31,21 @@ const UserChatWindow = ({
     document.querySelector(".user_chat_window_main").lastChild?.scrollIntoView(true);
   });
 
-  const unique_id = createUniqueId(app_user, chat_with_user);
   useEffect(() => {
     // async function startGettingMessage() {
-    //   const data = await startChat(app_user, chat_with_user);
+      //   const data = await startChat(app_user, chat_with_user);
     //   console.log("Before data");
     //   console.log(data);
     //   setAll_messages((pre) => {
-    //     console.log("In SET");
-    //     return data;
+      //     console.log("In SET");
+      //     return data;
     //   });
     //   console.log("After data");
     // }
     // startGettingMessage();
     // console.log("In state");
-
+    const unique_id = createUniqueId(app_user, chat_with_user);
+    
     try {
       onSnapshot(
         collection(database, "messages", unique_id, "chat"),
@@ -61,7 +61,7 @@ const UserChatWindow = ({
     } catch (e) {
       console.error("Error adding user: ", e);
     }
-  }, []);
+  }, [app_user, chat_with_user]);
 
   function sendMessageToDatabase() {
     if (message === "") return;

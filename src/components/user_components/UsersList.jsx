@@ -42,6 +42,7 @@ const UsersList = ({ app_user, getAllUsers, setChat_with_user }) => {
                 setChat_with_user={setChat_with_user}
               />
             );
+            return <></>
           })}
         </div>
       </div>
