@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+
+  /* Colors */
+  --main_color : #1B262C;
+  --primary_color : #2bceb8;
+  --primary_color_light : #2bceb888;
+  --secondry_color : #8eb1c9;
+  --secondry_color_light : #8eb1c988;
+  
+  /* Font-Size */
+  --heading_font_size : 3rem;
+  --primary_font_size : 2rem;
+  --secondry_font_size : 1rem;
+  
+}
+
+.flex_center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_container {
+  background-color: var(--main_color);
+  
+  min-height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+  padding: .5rem;
+}
+
+.body_container{
+  /* border: 2px red solid; */
+  height: 90vh;
+  width: 100%;
+}
+
+.navbar_container{
+  width: 92vw;
+  max-width: 35rem;
+  border-radius: 10px;
+  align-items: center;
+
+  background: linear-gradient(to right, var(--primary_color_light), var(--secondry_color_light));
+}
+
+
+/* ....................... Register ..................... */
+
+.register_container, .login_container{
+  background-color: white;
+  /* border: 5px solid white; */
+  border-radius: 5px;
+}
+.register_container .card, .login_container .card{
+  background: linear-gradient(to right, var(--primary_color_light), var(--secondry_color_light));
+}
+
+.alert{
+  font-size: 13px;
+}
+
+.toast-header .btn-close{
+  display: none;
+}
+
+.success_toast .toast-header strong{
+  color: green;
+}
+
+.failure_toast .toast-header strong{
+  color: red;
+}
+
+/* ....................... Chat Window ..................... */
+
+.chat_window_container{
+  /* border: solid 1px blue; */
+  /* background-color: white; */
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  max-width: 22rem;
+  
+  margin: 0 5px;
+  /* background: linear-gradient(to bottom, var(--primary_color), var(--secondry_color)); */
+}
+
+/* ....................... Users List ..................... */
+
+.users_list_container, .user_chat_window_container{
+  height: 95%;
+  width: 100%;
+  max-width: 21rem;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(to right, var(--primary_color), var(--secondry_color));
+  
+}
+
+.user_list_title div{
+  font-size: var(--primary_font_size);
+  font-weight: bold;
+  color: var(--main_color);
+}
+
+.user_list_title{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+
+  padding: 0 1rem;
+
+  width: 100%;
+  height: 10%;
+}
+
+.user_list_tiles_container p{
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.user_list_tiles_container *{
+  color: var(--main_color);
+}
+
+.user_list_tiles_container{
+  height: 90%;
+  padding: 1.5rem 1rem;
+  
+  background-color: rgba(245, 245, 245, 0.868);  
+  border-radius: 3rem 0 0;
+}
+
+.user_list_tiles{
+  overflow-y: auto;
+  
+  height: 98%;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondry_color_light);
+}
+
+/* ....................... Users Tile ..................... */
+
+.tile_container:hover{
+  background-color: rgba(245, 222, 179, 0.5);
+  border: 2px var(--primary_color) solid;
+}
+
+.tile_container{
+  display: flex;
+  align-items: center;
+  border: 2px var(--primary_color) dashed;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 8px;
+
+  cursor: pointer;
+  background-color: rgba(245, 222, 179, 0.2);
+}
+
+.tile_profile img{
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+  border: 1px black solid;
+}
+
+.tile_chat_info{
+  padding: 5px;
+  width: 100%;
+}
+
+.tile_chat_info p, .tile_chat_info h5{
+  margin: 0;
+}
+
+.tile_chat_info p{
+  font-weight: 400;
+}
+
+.tile_chat_info h5{
+  font-weight: bold;
+}
+
+.tile_chat_info_top, .tile_chat_info_bottom{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+.tile_chat_info_top h5{
+  font-size: large;
+}
+
+.tile_chat_info_top p{
+  font-size: .8rem;
+  color: var(--main_color);
+}
+
+.tile_chat_info_bottom p{
+  font-size: .9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.pending_message{
+  text-align: center;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  background-color: var(--primary_color_light);
+}
+
+/* .user_list_title{
+  background-image: url('/public/cloud.jpg');
+  background-repeat:no-repeat;
+  filter:opacity(60%);
+  
+  width: 100%;
+  height: 20%;
+} */
+
+/* ....................... User Chat Window ..................... */
+
+.user_chat_window_container{
+  padding: 10px;
+  background: rgba(241, 254, 255, 0.911);
+}
+
+.user_chat_window_top{
+  /* border-bottom: 1px solid #0007; */
+  min-height: 10%;
+  padding: 5px;
+}
+
+.user_chat_window_bar{
+  display: flex;
+  justify-content: space-between;
+}
+
+.user_chat_window_name h1{
+  margin: 0;
+  padding-top: 1rem;
+  
+  color: var(--main_color);
+}
+
+.user_chat_window_bottom{
+  /* border-bottom: 1px solid #0007; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 87%;
+  padding: 5px;
+}
+
+.user_chat_window_main{
+  /* border: red 1px solid; */
+  height: 90%;
+  width: 100%;
+  overflow-y: auto;
+  margin-bottom: 5px;
+}
+
+hr{
+  margin: 1px 0 !important;
+  border-top: 2px solid black !important;
+}
+
+.user_chat_window_input{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  margin: 5px 0;
+  padding: 10px;
+
+  height: 8%;
+  width: 107%;
+
+  font-size: var(--secondry_font_size);
+  /* background-color: #1ff1; */
+  border: 1px solid var(--secondry_color);
+  border-radius: 20px;
+  
+  /* border: var(--main_color) 1px dashed; */
+}
+
+.user_chat_window_input input:focus{
+  outline: none;
+}
+
+.user_chat_window_input input{
+  width: 90%;
+  border: none;
+  padding: 5px;
+  background-color: transparent;
+}
+
+.msg_box{
+  background: linear-gradient(to right, var(--primary_color_light), var(--secondry_color_light));
+  
+  font-size: var(--secondry_font_size);
+  border-radius: 20px;
+  padding: 5px 1rem;
+  color: var(--main_color);
+
+  margin: .5rem 5px;
+  
+  width: fit-content;
+  max-width: 15rem;
+}
