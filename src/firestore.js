@@ -31,7 +31,9 @@ async function getChat(chat_title) {
     onSnapshot(
       collection(database, "messages", "0rb3m_5fz8ai", "chat"),
       (chatSnap) => {
-        chatSnap.forEach((snap) => all_messages.push({...snap.data(), id: snap.id}));
+        chatSnap.forEach((snap) =>
+          all_messages.push({ ...snap.data(), id: snap.id })
+        );
         // console.log(all_messages);
       }
     );
@@ -73,7 +75,6 @@ export function sendMessage(sender, receiver, message) {
   }
 }
 
-
 export async function getAllUsers() {
   const all_users = [];
 
@@ -86,7 +87,7 @@ export async function getAllUsers() {
 
 export async function getUser(userId, password = null) {
   try {
-    if (userId.length === 0 || password.length === 0) return "ERROR";
+    if (userId.length === 0 || (password && password.length === 0)) return "ERROR";
   } catch (error) {
     console.log(error);
   }
@@ -94,10 +95,8 @@ export async function getUser(userId, password = null) {
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    // console.log("User data:", docSnap.data());
     return docSnap.data();
   } else {
-    // doc.data() will be undefined in this case
     console.log("No such User!");
     return null;
   }
@@ -113,7 +112,6 @@ export async function addUser(name, email, password, confirm_password) {
     return;
   // Check duplicate
   const user = await getUser(email);
-  // console.log(user);
 
   if (user) return `User with email ${email} already present.`;
   try {
@@ -128,5 +126,3 @@ export async function addUser(name, email, password, confirm_password) {
     console.error("Error adding user: ", e);
   }
 }
-
-// export default {addUser, getUser};
